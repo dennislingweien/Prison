@@ -1,9 +1,6 @@
 package com.Prison.main;
 
 public class Main {
-<<<<<<< Updated upstream
-
-=======
 	public void onEnable() {
 		registerCommands();
 		registerListeners();
@@ -17,5 +14,5 @@ public class Main {
 	public void registerListeners() {
 		
 	}
->>>>>>> Stashed changes
+
 }
