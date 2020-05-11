@@ -1,5 +1,5 @@
 package com.Prison.main;
 
-public class Economy {
+public class PlayerData {
 	
 }

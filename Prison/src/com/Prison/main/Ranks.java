@@ -5,7 +5,7 @@ public class Ranks {
 	String suffix;
 	String chatColor;
 	boolean isDefault;
-	
+	String name;
 	
 	
 }
