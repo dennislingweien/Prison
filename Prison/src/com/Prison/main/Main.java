@@ -24,11 +24,13 @@ public class Main extends JavaPlugin{
 	public void registerCommands() {
 		this.getCommand("fly").setExecutor(new CmdFly());
 		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
+		this.getCommand("crates").setExecutor(new Crates());
 		//this.getCommand("").setExecutor(new CmdTrade());
 		
 	}
 	public void registerListeners() {
 	    PluginManager pm = getServer().getPluginManager();
+	    pm.registerEvents(new Crates(), this);
 	    pm.registerEvents(new ServerMOTD(), this);
 	    pm.registerEvents(new PlayerJoin(), this);
 	    pm.registerEvents(new PlayerChat(), this);
