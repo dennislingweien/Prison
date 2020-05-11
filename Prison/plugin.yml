@@ -1,0 +1,7 @@
+name: Prison
+version: 1.0
+author: JrPanda
+api-version: 1.13
+main: com.Prison.main.Main
+
+commands:
