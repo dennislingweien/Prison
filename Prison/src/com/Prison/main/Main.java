@@ -1,5 +1,7 @@
 package com.Prison.main;
 
+import java.io.File;
+
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,21 +15,25 @@ import com.Prison.listener.PlayerJoin;
 import com.Prison.listener.ServerMOTD;
 
 public class Main extends JavaPlugin{
+	
 	public void onEnable() {
 	    getLogger().info("Prison is loaded.");
 		registerCommands();
 		registerListeners();
+		setupFiles();
 	}
+	
 	public void onDisable() {
 	    getLogger().info("Prison is loaded.");
 	}
+	
 	public void registerCommands() {
 		this.getCommand("fly").setExecutor(new CmdFly());
 		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
 		this.getCommand("crates").setExecutor(new Crates());
 		//this.getCommand("").setExecutor(new CmdTrade());
-		
 	}
+	
 	public void registerListeners() {
 	    PluginManager pm = getServer().getPluginManager();
 	    pm.registerEvents(new Crates(), this);
@@ -37,6 +43,18 @@ public class Main extends JavaPlugin{
 	    pm.registerEvents(new MineEvent(), this);
 	    pm.registerEvents(new CustomPickaxe(), this);
 		pm.registerEvents(new DeathEvent(), this);
+	}
+	
+	public void setupFiles() {
+		File dataFolder = new File(getDataFolder()+"/Player");
+		if(!dataFolder.exists()) {
+			getLogger().info("Woof woof! Data folder not found!");
+			getLogger().info("Sparky is here to save the day!");
+			dataFolder.mkdirs();
+			getLogger().info("Sucessfully created Player folder!");
+		} else {
+			getLogger().info("Player folder found!");
+		}
 	}
 
 }
