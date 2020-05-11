@@ -38,7 +38,7 @@ public class Main extends JavaPlugin{
 	    PluginManager pm = getServer().getPluginManager();
 	    pm.registerEvents(new Crates(), this);
 	    pm.registerEvents(new ServerMOTD(), this);
-	    pm.registerEvents(new PlayerJoin(), this);
+	    pm.registerEvents(new PlayerJoin(this), this);
 	    pm.registerEvents(new PlayerChat(), this);
 	    pm.registerEvents(new MineEvent(), this);
 	    pm.registerEvents(new CustomPickaxe(), this);
@@ -53,8 +53,9 @@ public class Main extends JavaPlugin{
 			dataFolder.mkdirs();
 			getLogger().info("Sucessfully created Player folder!");
 		} else {
-			getLogger().info("Player folder found!");
+			getLogger().info("[Folder] Player is found!");
 		}
+		
 	}
 
 }
