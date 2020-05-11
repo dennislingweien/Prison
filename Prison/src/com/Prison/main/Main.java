@@ -3,6 +3,8 @@ package com.Prison.main;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.Prison.listener.CustomPickaxe;
+import com.Prison.listener.DeathEvent;
 import com.Prison.listener.PlayerJoin;
 
 public class Main extends JavaPlugin{
@@ -21,7 +23,8 @@ public class Main extends JavaPlugin{
 	public void registerListeners() {
 	    PluginManager pm = getServer().getPluginManager();
 	    pm.registerEvents(new PlayerJoin(), this);
-		
+	    pm.registerEvents(new CustomPickaxe(), this);
+		pm.registerEvents(new DeathEvent(), this);
 	}
 
 }
