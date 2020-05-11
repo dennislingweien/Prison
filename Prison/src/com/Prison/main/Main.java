@@ -10,24 +10,26 @@ import com.Prison.listener.DeathEvent;
 import com.Prison.listener.MineEvent;
 import com.Prison.listener.PlayerChat;
 import com.Prison.listener.PlayerJoin;
+import com.Prison.listener.ServerMOTD;
 
 public class Main extends JavaPlugin{
 	public void onEnable() {
-	    getLogger().info("Survival+ is loaded.");
+	    getLogger().info("Prison is loaded.");
 		registerCommands();
 		registerListeners();
 	}
 	public void onDisable() {
-	    getLogger().info("Survival+ is loaded.");
+	    getLogger().info("Prison is loaded.");
 	}
 	public void registerCommands() {
-		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
 		this.getCommand("fly").setExecutor(new CmdFly());
+		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
 		//this.getCommand("").setExecutor(new CmdTrade());
 		
 	}
 	public void registerListeners() {
 	    PluginManager pm = getServer().getPluginManager();
+	    pm.registerEvents(new ServerMOTD(), this);
 	    pm.registerEvents(new PlayerJoin(), this);
 	    pm.registerEvents(new PlayerChat(), this);
 	    pm.registerEvents(new MineEvent(), this);
