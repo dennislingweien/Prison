@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import com.Prison.main.Bank;
+import com.Prison.main.PlayerData;
 
 
 public class CmdWithdraw implements CommandExecutor {
@@ -22,28 +23,32 @@ public class CmdWithdraw implements CommandExecutor {
 				sender.sendMessage("");
 				return true;
 			}
-			if(args.length == 1) {
+			if(args.length == 2) {
 				
 				//Get the players inventory data
-				Player p = (Player) sender;
-				Inventory inv = p.getInventory();
+				PlayerData pd = (PlayerData) sender;
+				Inventory inv = pd.getPlayer().getInventory();
 				
 				//Check for full inventory
 				if(inv.firstEmpty() == -1) 
 				{
-					p.sendMessage("INVENTORY IS FULL");
+					pd.getPlayer().sendMessage("INVENTORY IS FULL");
 				}
 				//if inventory has space
 				else
 				{
-					//Create the Cheque Item
-					ItemStack item = new ItemStack(Material.PAPER, 1);
-					ItemMeta meta = item.getItemMeta();
-					meta.setDisplayName(ChatColor.GREEN + " $500");
-					item.setItemMeta(meta);
+					if(pd.bank.attemptWithdraw(pd, args[0], args[1])) {
+						
+						//Create the Cheque Item
+						ItemStack item = new ItemStack(Material.PAPER, 1);
+						ItemMeta meta = item.getItemMeta();
+						meta.setDisplayName(ChatColor.GREEN + args[1]);
+						item.setItemMeta(meta);
+						
+						//add the withdrawn cheque
+						inv.addItem(item);			
+					}
 					
-					//add the withdrawn cheque
-					inv.addItem(item);			
 				}
 				return true;
 			} 

@@ -12,31 +12,44 @@ import java.util.Base64;
 public class Bank {
 	private int balance = 0;
 	private String encodedPassword;
+	private PlayerData pd;
 	
-	
+	public Bank(PlayerData _pd, String _encodedPassword) {
+		this.pd = _pd;
+		this.encodedPassword = _encodedPassword;
+	}
+	public Bank() {
+		// TODO Auto-generated constructor stub
+	}
 	//create bank account
-	public void createAccount(PlayerData pd, String password) {
-		this.encodedPassword = Base64.getEncoder().encodeToString(password.getBytes());
-		pd.setBankPassword(encodedPassword);
+	public void initAccount(PlayerData pd, String password) {
+		// TODO Initialize account with credentials and store them somewhere
 	}
 	
 	//access bank account
 	public int getBalance(PlayerData pd, String password) {
 		int bal = 0;
 		if (password == pd.getBankPassword()) {
-			//access bank
-			return bal;
+			// TODO access bank
+
 		}
 		else{
 			pd.p.sendMessage("Wrong Password!");
-			return bal;
 		}
+		return bal;
 	}
 	//withdraw
-	public boolean attemptWithdraw(PlayerData pd, String password, int amount){
+	public boolean attemptWithdraw(PlayerData pd, String password, String _amount){
 		int bal = getBalance(pd, password);
-		
-		return false;
+		int amount = Integer.parseInt(_amount);
+		if(bal >= amount) {
+			bal -= amount;
+			return true;
+		}
+		else{
+			pd.p.sendMessage("Withdraw Failed!");
+			return false;
+		}
 	}
 	//deposit
 	
