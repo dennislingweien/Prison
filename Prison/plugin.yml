@@ -5,3 +5,11 @@ api-version: 1.13
 main: com.Prison.main.Main
 
 commands:
+  withdraw:
+    description:
+    usage: /withdraw <amount>
+    aliases: []
+  fly:
+    description:
+    usage: /fly [player]
+    aliases: []
