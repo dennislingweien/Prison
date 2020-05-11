@@ -10,6 +10,9 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import com.Prison.main.Bank;
+
+
 public class CmdWithdraw implements CommandExecutor {
 
 	@Override
@@ -43,7 +46,8 @@ public class CmdWithdraw implements CommandExecutor {
 					inv.addItem(item);			
 				}
 				return true;
-			} else {
+			} 
+			else {
 				//too many args
 				return true;
 			}
