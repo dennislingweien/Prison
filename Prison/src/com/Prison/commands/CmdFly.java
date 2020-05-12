@@ -18,7 +18,7 @@ public class CmdFly implements CommandExecutor {
 				return true;
 			}
 			Player p = (Player) sender;
-			if(args.length != 0) {
+			if(args.length == 0) {
 				if(p.getAllowFlight() == false) {
 					p.setAllowFlight(true);
 					p.sendMessage(ChatColor.GOLD + "Set fly mode " + ChatColor.GREEN + "enabled " + ChatColor.GOLD + "for " + p.getName());

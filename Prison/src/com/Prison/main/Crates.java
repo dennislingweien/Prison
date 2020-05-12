@@ -23,12 +23,12 @@ public class Crates implements CommandExecutor,Listener{
 			if(args.length == 1) {
 				if(args[0].equalsIgnoreCase("help")) {
 					String msg = "-----";
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c"+msg + "&6"+msg + "&e"+msg + "&a"+msg + "b"+msg + "&a"+msg + "&e"+msg + "&6"+msg + "&c"+msg));
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c"+msg + "&6"+msg + "&e"+msg + "&a"+msg + "&b"+msg + "&a"+msg + "&e"+msg + "&6"+msg + "&c"+msg));
 					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "         /crates create - Create a new crate"));
 					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "         /crates delete - Delete an exisiting crate"));
 					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "         /crates edit - Edit an existing crate"));
 					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "         /crates list - Show all existing crates"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c"+msg + "&6"+msg + "&e"+msg + "&a"+msg + "b"+msg + "&a"+msg + "&e"+msg + "&6"+msg + "&c"+msg));
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c"+msg + "&6"+msg + "&e"+msg + "&a"+msg + "&b"+msg + "&a"+msg + "&e"+msg + "&6"+msg + "&c"+msg));
 					return true;
 				}
 				if(args[0].equalsIgnoreCase("list")) {

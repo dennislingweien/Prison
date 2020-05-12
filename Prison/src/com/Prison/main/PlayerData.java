@@ -10,6 +10,7 @@ public class PlayerData {
 	public String name = "";
 	private int wallet = 0;
 	private String bankPassword;
+	private boolean isMuted = false;
 	public Player p;
 	public Bank bank = new Bank();
 	
@@ -38,5 +39,15 @@ public class PlayerData {
 	//player
 	public Player getPlayer() {
 		return this.p;
+	}
+	
+	//status
+	public void toggleMute() {
+		if(this.isMuted) {
+			this.isMuted = false;
+		}
+		else {
+			this.isMuted = true;
+		}
 	}
 }
