@@ -13,8 +13,12 @@ import org.bukkit.entity.Player;
  *
  */
 public class YamlManager {
-
-	private Main main = new Main(); //reference to main directory
+	private final Main main;
+	
+	public YamlManager() {
+		this.main = new Main();
+	}
+	
 	
 	public String readYAML(Player p, String key) {
 		File file = new File(main.getDataFolder() + "/Player/" + p.getUniqueId().toString() + ".yml");
