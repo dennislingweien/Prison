@@ -6,6 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.Prison.main.ErrorMessages;
+
 import net.md_5.bungee.api.ChatColor;
 
 public class CmdFly implements CommandExecutor {
@@ -14,7 +16,7 @@ public class CmdFly implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("fly")) {
 			if(!(sender instanceof Player)) {
-				sender.sendMessage("");
+				sender.sendMessage(ErrorMessages.MUST_BE_PLAYER.toString());
 				return true;
 			}
 			Player p = (Player) sender;
