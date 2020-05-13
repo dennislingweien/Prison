@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.Prison.commands.CmdFly;
 import com.Prison.commands.CmdWithdraw;
+import com.Prison.commands.Moderation;
 import com.Prison.listener.CustomPickaxe;
 import com.Prison.listener.DeathEvent;
 import com.Prison.listener.MineEvent;
@@ -31,6 +32,7 @@ public class Main extends JavaPlugin{
 		this.getCommand("fly").setExecutor(new CmdFly());
 		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
 		this.getCommand("crates").setExecutor(new Crates());
+		this.getCommand("moderation").setExecutor(new Moderation());
 		//this.getCommand("").setExecutor(new CmdTrade());
 	}
 	

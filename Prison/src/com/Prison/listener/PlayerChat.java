@@ -10,6 +10,6 @@ public class PlayerChat implements Listener {
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent e) {
 		//e.setMessage("");
-		Player p = (Player) e.getPlayer();
+		//Player p = (Player) e.getPlayer();
 	}
 }

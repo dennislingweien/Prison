@@ -28,9 +28,7 @@ public class PlayerJoin implements Listener {
 		Player p = e.getPlayer();
 		setup(p);
 		if(!p.hasPlayedBefore()) {
-			Bukkit.broadcastMessage(ChatColor.DARK_GREEN + " + " + ChatColor.GRAY + p.getName());
-			
-			Bukkit.broadcastMessage(ChatColor.DARK_GREEN + " + " + ChatColor.GRAY + p.getName());		
+			Bukkit.broadcastMessage(ChatColor.DARK_GREEN + " + " + ChatColor.GRAY + p.getName());	
 		}
 		else
 		{
