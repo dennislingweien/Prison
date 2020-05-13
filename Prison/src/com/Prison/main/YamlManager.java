@@ -15,8 +15,8 @@ import org.bukkit.entity.Player;
 public class YamlManager {
 	private Main main;
 	
-	public YamlManager() {
-		this.main = new Main();
+	public YamlManager(Main _main) {
+		this.main = _main;
 	}
 	
 	

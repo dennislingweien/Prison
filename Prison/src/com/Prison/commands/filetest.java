@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.Prison.main.Main;
 import com.Prison.main.YamlManager;
 
 /**
@@ -16,6 +17,10 @@ import com.Prison.main.YamlManager;
  */
 public class filetest implements CommandExecutor {
 
+	private Main main;
+	public filetest(Main _main) {
+		this.main = _main;
+	}
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
@@ -26,7 +31,7 @@ public class filetest implements CommandExecutor {
 			}
 			else {
 				Player current = (Player)sender;
-				YamlManager manager = new YamlManager();
+				YamlManager manager = new YamlManager(main);
 				
 				current.sendMessage(manager.readYAML(current, "Name"));
 			}
