@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 
 import com.Prison.main.PlayerData;
+import com.Prison.main.YamlManager;
 import com.Prison.main.Main;
 
 
@@ -51,5 +52,7 @@ public class PlayerJoin implements Listener {
 		else {
 			p.sendMessage("file already created!");
 		}
+		YamlManager manager = new YamlManager();
+		manager.writeYAML(p, "Name", p.getName());
 	}
 }
