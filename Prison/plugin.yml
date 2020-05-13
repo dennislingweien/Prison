@@ -21,3 +21,7 @@ commands:
     description:
     usage: /moderation [args]
     aliases: []
+  filetest:
+    description:
+    usage: /filetest
+    aliases: [ft]
