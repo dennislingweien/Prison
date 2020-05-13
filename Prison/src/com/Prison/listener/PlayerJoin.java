@@ -52,7 +52,7 @@ public class PlayerJoin implements Listener {
 		else {
 			p.sendMessage("file already created!");
 		}
-		YamlManager manager = new YamlManager();
+		YamlManager manager = new YamlManager(main);
 		manager.writeYAML(p, "Name", p.getName());
 	}
 }
