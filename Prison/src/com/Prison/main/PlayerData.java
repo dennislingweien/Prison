@@ -1,6 +1,14 @@
 package com.Prison.main;
 import java.util.Base64;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+
+import net.md_5.bungee.api.ChatColor;
+
 
 /**
  * @author Wayne
@@ -13,10 +21,13 @@ public class PlayerData {
 	private boolean isMuted = false;
 	public Player p;
 	public Bank bank = new Bank();
+	private ItemStack playerhead;
+	//private SkullMeta skullmeta
 	
-	public PlayerData(String _name, Player _p){
-		this.name = _name;
+	public PlayerData(Player _p){
+		this.name = _p.getName();
 		this.p = _p;
+		setHead();
 	}
 	
 	//Wallet shit
@@ -49,5 +60,17 @@ public class PlayerData {
 		else {
 			this.isMuted = true;
 		}
+	}
+	
+	private void setHead() {
+		this.playerhead = new ItemStack(Material.PLAYER_HEAD, 1);
+		SkullMeta skull = (SkullMeta) playerhead.getItemMeta();
+		skull.setOwningPlayer(Bukkit.getOfflinePlayer(p.getUniqueId()));
+		skull.setDisplayName(ChatColor.RED + this.name + "'s Head");
+		playerhead.setItemMeta(skull);
+	}
+	
+	public ItemStack getHead() {
+		return this.playerhead;
 	}
 }

@@ -32,7 +32,7 @@ public class PlayerJoin implements Listener {
 		}
 		else
 		{
-			PlayerData pd = new PlayerData(p.getName(), p);
+			PlayerData pd = new PlayerData(p);
 		}
 	}
 
