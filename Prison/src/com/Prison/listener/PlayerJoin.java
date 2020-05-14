@@ -27,32 +27,33 @@ public class PlayerJoin implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		
 		Player p = e.getPlayer();
-		setup(p);
 		if(!p.hasPlayedBefore()) {
 			Bukkit.broadcastMessage(ChatColor.DARK_GREEN + " + " + ChatColor.GRAY + p.getName());	
 		}
 		else
 		{
 			PlayerData pd = new PlayerData(p);
+			setup(pd);
 		}
+		
 	}
 
-	public void setup(Player p) {
-		String uuid = p.getUniqueId().toString();
+	public void setup(PlayerData pd) {
+		String uuid = pd.getPlayer().getUniqueId().toString();
 		File file = new File(main.getDataFolder() + "/Player/"+ uuid + ".yml");	
 		if(!file.exists()) {
 			try {
 				file.createNewFile();
-				p.sendMessage("File created");
+				pd.getPlayer().sendMessage("File created");
 			} catch (IOException e) {
 				e.printStackTrace();
-				p.sendMessage("Error creating");
+				pd.getPlayer().sendMessage("Error creating");
 			}
 		}
 		else {
-			p.sendMessage("file already created!");
+			pd.getPlayer().sendMessage("file already created!");
+			pd.createYAML(main);
 		}
-		YamlManager manager = new YamlManager(main);
-		manager.writeYAML(p, "Name", p.getName());
+		
 	}
 }
