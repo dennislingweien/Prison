@@ -32,7 +32,7 @@ public class filetest implements CommandExecutor {
 			else {
 				Player current = (Player)sender;
 				YamlManager manager = new YamlManager(main);
-				current.sendMessage(manager.readYAML(current, "Name."));
+				current.sendMessage(manager.readYAML(current, "Name"));
 			}
 		}
 		return false;
