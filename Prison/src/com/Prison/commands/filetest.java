@@ -33,6 +33,10 @@ public class filetest implements CommandExecutor {
 				Player current = (Player)sender;
 				YamlManager manager = new YamlManager(main);
 				current.sendMessage(manager.readYAML(current, "Name"));
+<<<<<<< Updated upstream
+=======
+				return true;
+>>>>>>> Stashed changes
 			}
 		}
 		return false;

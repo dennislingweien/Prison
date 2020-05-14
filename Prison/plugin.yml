@@ -17,11 +17,15 @@ commands:
     description:
     usage: /crates [args]
     aliases: []
-  moderation:
+  mod:
     description:
-    usage: /moderation [args]
-    aliases: []
+    usage: /mod [args]
+    aliases: [ban, kick, warn]
   filetest:
     description:
     usage: /filetest
     aliases: [ft]
+  report:
+    description:
+    usage: /report <player> [args]
+    aliases: []
