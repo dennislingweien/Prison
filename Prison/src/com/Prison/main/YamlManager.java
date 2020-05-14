@@ -23,7 +23,7 @@ public class YamlManager {
 	public String readYAML(Player p, String key) {
 		File file = new File(main.getDataFolder() + "/Player/" + p.getUniqueId().toString() + ".yml");
 		FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-		return config.getConfigurationSection(key).toString();
+		return config.getString(key);
 	}
 	
 	public void writeYAML(Player p, String key, String data) {

@@ -35,7 +35,7 @@ public class Main extends JavaPlugin{
 		this.getCommand("crates").setExecutor(new Crates());
 		this.getCommand("moderation").setExecutor(new Moderation());
 		//this.getCommand("").setExecutor(new CmdTrade());
-		this.getCommand("filetest").setExecutor(new filetest());
+		this.getCommand("filetest").setExecutor(new filetest(this));
 	}
 	
 	public void registerListeners() {
