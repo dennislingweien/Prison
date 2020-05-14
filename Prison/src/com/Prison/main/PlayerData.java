@@ -73,4 +73,10 @@ public class PlayerData {
 	public ItemStack getHead() {
 		return this.playerhead;
 	}
+	
+	public void createYAML(Main main) {
+		YamlManager manager = new YamlManager(main);
+		manager.writeYAML(p, "Name", this.name);
+		manager.writeYAML(p, "Wallet", String.valueOf(this.wallet));
+	}
 }
