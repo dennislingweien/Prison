@@ -40,7 +40,18 @@ public class YamlManager {
 			config.save(file);
 		} catch (IOException e) {
 			e.printStackTrace();
+		}	
+	}
+	
+	public void createYAML(String name) {
+		File file = new File(main.getDataFolder() + "/" + name + ".yml");
+		FileConfiguration config = YamlConfiguration.loadConfiguration(file);
+		try {
+			config.save(file);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 	}
+	
 }

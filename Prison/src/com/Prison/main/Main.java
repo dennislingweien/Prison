@@ -33,7 +33,7 @@ public class Main extends JavaPlugin{
 	public void registerCommands() {
 		this.getCommand("fly").setExecutor(new CmdFly());
 		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
-		this.getCommand("report").setExecutor(new CmdReport());
+		this.getCommand("report").setExecutor(new CmdReport(this));
 		this.getCommand("crates").setExecutor(new Crates());
 		this.getCommand("mod").setExecutor(new Moderation());
 		//this.getCommand("").setExecutor(new CmdTrade());
