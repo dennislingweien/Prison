@@ -16,7 +16,6 @@ public class DeathEvent implements Listener {
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		String uuid = e.getEntity().getUniqueId().toString();
 		e.getDrops().add(dropHead(uuid));
-		
 	}
 	
 	public ItemStack dropHead(String uuid) {

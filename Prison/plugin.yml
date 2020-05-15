@@ -13,6 +13,10 @@ commands:
     description:
     usage: /withdraw <amount>
     aliases: []
+  clearchat:
+    description:
+    usage: /clearchat
+    aliases: []
   crates:
     description:
     usage: /crates [args]
