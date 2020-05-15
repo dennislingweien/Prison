@@ -5,9 +5,11 @@ import java.io.File;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.Prison.commands.CmdClearChat;
 import com.Prison.commands.CmdFly;
 import com.Prison.commands.CmdWithdraw;
 import com.Prison.commands.filetest;
+import com.Prison.listener.AutoSmelt;
 import com.Prison.listener.DeathEvent;
 import com.Prison.listener.PlayerJoin;
 import com.Prison.listener.ServerMOTD;
@@ -29,6 +31,7 @@ public class Main extends JavaPlugin{
 		this.getCommand("fly").setExecutor(new CmdFly());
 		this.getCommand("withdraw").setExecutor(new CmdWithdraw());
 		this.getCommand("crates").setExecutor(new Crates());
+		this.getCommand("clearchat").setExecutor(new CmdClearChat());
 		//this.getCommand("").setExecutor(new CmdTrade());
 		this.getCommand("filetest").setExecutor(new filetest(this));
 	}
@@ -39,6 +42,7 @@ public class Main extends JavaPlugin{
 	    pm.registerEvents(new ServerMOTD(), this);
 	    pm.registerEvents(new PlayerJoin(this), this);
 		pm.registerEvents(new DeathEvent(), this);
+		pm.registerEvents(new AutoSmelt(), this);
 	}
 	
 	public void setupFiles() {

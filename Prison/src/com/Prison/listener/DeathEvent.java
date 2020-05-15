@@ -16,12 +16,13 @@ public class DeathEvent implements Listener {
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		String uuid = e.getEntity().getUniqueId().toString();
-		
+
 		//RNG shiet for head
 		int randomnum = ThreadLocalRandom.current().nextInt(1, 5);
 		if(randomnum == 3) {
 			e.getDrops().add(dropHead(uuid));
 		}
+
 	}
 	
 	public ItemStack dropHead(String uuid) {

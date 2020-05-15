@@ -61,7 +61,6 @@ public class YamlManager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	*/
 }
