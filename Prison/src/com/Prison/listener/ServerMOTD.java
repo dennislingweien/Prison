@@ -9,7 +9,7 @@ public class ServerMOTD implements Listener {
 
 	
 	@EventHandler
-	public void onPingMsg(ServerListPingEvent e) {
+	public void MOTD(ServerListPingEvent e) {
 		
 		e.setMotd(ChatColor.translateAlternateColorCodes('&', "&8&lPrison Server \n &6Active Staffs/Friendly Community/Custom plugins"));
 	}

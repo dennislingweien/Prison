@@ -17,15 +17,7 @@ commands:
     description:
     usage: /crates [args]
     aliases: []
-  mod:
-    description:
-    usage: /mod [args]
-    aliases: [ban, kick, warn]
   filetest:
     description:
     usage: /filetest
     aliases: [ft]
-  report:
-    description:
-    usage: /report <player> [args]
-    aliases: []

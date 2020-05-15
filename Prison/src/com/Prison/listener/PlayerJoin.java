@@ -9,11 +9,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-
-import com.Prison.main.PlayerData;
-import com.Prison.main.YamlManager;
 import com.Prison.main.Main;
-
+import com.Prison.main.PlayerData;
 
 import net.md_5.bungee.api.ChatColor;
 

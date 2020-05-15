@@ -20,7 +20,6 @@ public class PlayerData {
 	private String bankPassword;
 	private boolean isMuted = false;
 	public Player p;
-	public Bank bank = new Bank();
 	private ItemStack playerhead;
 	//private SkullMeta skullmeta
 	
