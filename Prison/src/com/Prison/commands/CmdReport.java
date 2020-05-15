@@ -35,6 +35,7 @@ public class CmdReport implements CommandExecutor {
 				}
 				String reason = sb.toString();
 				yaml.createYAML("reports");
+				
 				p.sendMessage("Report sent!");
 				
 				return true;

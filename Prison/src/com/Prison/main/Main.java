@@ -10,7 +10,6 @@ import com.Prison.commands.CmdReport;
 import com.Prison.commands.CmdWithdraw;
 import com.Prison.commands.Moderation;
 import com.Prison.commands.filetest;
-import com.Prison.listener.CustomPickaxe;
 import com.Prison.listener.DeathEvent;
 import com.Prison.listener.MineEvent;
 import com.Prison.listener.PlayerChat;
@@ -47,7 +46,6 @@ public class Main extends JavaPlugin{
 	    pm.registerEvents(new PlayerJoin(this), this);
 	    pm.registerEvents(new PlayerChat(), this);
 	    pm.registerEvents(new MineEvent(), this);
-	    pm.registerEvents(new CustomPickaxe(), this);
 		pm.registerEvents(new DeathEvent(), this);
 	}
 	
