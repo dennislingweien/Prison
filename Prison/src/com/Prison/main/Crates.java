@@ -18,7 +18,7 @@ public class Crates implements CommandExecutor,Listener{
 				
 				return true;
 			}
-			Player p = (Player) sender;
+			//Player p = (Player) sender;
 			if(args.length == 0) {
 				String msg = "-----";
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c"+msg + "&6"+msg + "&e"+msg + "&a"+msg + "&b"+msg + "&a"+msg + "&e"+msg + "&6"+msg + "&c"+msg));

@@ -1,5 +1,4 @@
 package com.Prison.main;
-import java.util.Base64;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -17,10 +16,11 @@ import net.md_5.bungee.api.ChatColor;
 public class PlayerData {
 	public String name = "";
 	private int wallet = 0;
-	private String bankPassword;
 	private boolean isMuted = false;
 	public Player p;
 	private ItemStack playerhead;
+	private String rank = "";
+	
 	//private SkullMeta skullmeta
 	
 	public PlayerData(Player _p){
@@ -37,14 +37,7 @@ public class PlayerData {
 		return this.wallet;
 	}
 	
-	//Bank shit
-	public void createBankAccount(String password) {
-		this.bankPassword = Base64.getEncoder().encodeToString(password.getBytes());
-		bank.initAccount(this, bankPassword);
-	}
-	public String getBankPassword() {
-		return bankPassword;
-	}
+	
 	
 	//player
 	public Player getPlayer() {
@@ -73,9 +66,10 @@ public class PlayerData {
 		return this.playerhead;
 	}
 	
-	public void createYAML(Main main) {
+	public void loadYAML(Main main) {
 		YamlManager manager = new YamlManager(main);
 		manager.writeYAML(p, "Name", this.name);
 		manager.writeYAML(p, "Wallet", String.valueOf(this.wallet));
+		manager.writeYAML(p, "isMuted", Boolean.toString(this.isMuted));
 	}
 }

@@ -1,6 +1,7 @@
 package com.Prison.listener;
 
 import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -15,8 +16,12 @@ public class DeathEvent implements Listener {
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		String uuid = e.getEntity().getUniqueId().toString();
-		e.getDrops().add(dropHead(uuid));
 		
+		//RNG shiet for head
+		int randomnum = ThreadLocalRandom.current().nextInt(1, 5);
+		if(randomnum == 3) {
+			e.getDrops().add(dropHead(uuid));
+		}
 	}
 	
 	public ItemStack dropHead(String uuid) {

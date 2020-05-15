@@ -10,7 +10,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.Prison.main.Bank;
 import com.Prison.main.PlayerData;
 
 
@@ -36,19 +35,15 @@ public class CmdWithdraw implements CommandExecutor {
 				}
 				//if inventory has space
 				else
-				{
-					if(pd.bank.attemptWithdraw(pd, args[0], args[1])) {
-						
-						//Create the Cheque Item
-						ItemStack item = new ItemStack(Material.PAPER, 1);
-						ItemMeta meta = item.getItemMeta();
-						meta.setDisplayName(ChatColor.GREEN + args[1]);
-						item.setItemMeta(meta);
-						
-						//add the withdrawn cheque
-						inv.addItem(item);			
-					}
-					
+				{		
+					// Create the Cheque Item
+					ItemStack item = new ItemStack(Material.PAPER, 1);
+					ItemMeta meta = item.getItemMeta();
+					meta.setDisplayName(ChatColor.GREEN + args[1]);
+					item.setItemMeta(meta);
+
+					// add the withdrawn cheque
+					inv.addItem(item);	
 				}
 				return true;
 			} 

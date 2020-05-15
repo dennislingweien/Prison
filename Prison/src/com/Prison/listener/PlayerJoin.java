@@ -42,6 +42,7 @@ public class PlayerJoin implements Listener {
 			try {
 				file.createNewFile();
 				pd.getPlayer().sendMessage("File created");
+				pd.loadYAML(main);
 			} catch (IOException e) {
 				e.printStackTrace();
 				pd.getPlayer().sendMessage("Error creating");
@@ -49,7 +50,6 @@ public class PlayerJoin implements Listener {
 		}
 		else {
 			pd.getPlayer().sendMessage("file already created!");
-			pd.createYAML(main);
 		}
 		
 	}
