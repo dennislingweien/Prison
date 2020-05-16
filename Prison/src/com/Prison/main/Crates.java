@@ -5,9 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractEvent;
 
 public class Crates implements CommandExecutor,Listener{
 	
@@ -35,9 +33,5 @@ public class Crates implements CommandExecutor,Listener{
 			}
 		}
 		return false;
-	}
-	@EventHandler
-	public void PlayerInteract(PlayerInteractEvent e) {
-		
 	}
 }
