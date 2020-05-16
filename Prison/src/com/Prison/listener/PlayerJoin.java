@@ -4,19 +4,25 @@ import java.io.File;
 import java.io.IOException;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Score;
+import org.bukkit.scoreboard.Scoreboard;
 
 import com.Prison.main.Main;
 import com.Prison.main.PlayerData;
+import com.Prison.main.Util;
 
-import net.md_5.bungee.api.ChatColor;
 
 public class PlayerJoin implements Listener {
 
 	private Main main;
+	private Util util = new Util();
 	public PlayerJoin(Main main) {
 		this.main = main;
 	}
@@ -32,6 +38,7 @@ public class PlayerJoin implements Listener {
 			PlayerData pd = new PlayerData(p);
 			setup(pd);
 		}
+		setupScoreboard(p);
 		
 	}
 
@@ -53,4 +60,46 @@ public class PlayerJoin implements Listener {
 		}
 		
 	}
+
+
+
+	public void setupScoreboard(Player p) {
+		Scoreboard board = Bukkit.getServer().getScoreboardManager().getNewScoreboard();
+		
+		
+		Objective obj = board.registerNewObjective("Test1", "test2", "test3");
+		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+		obj.setDisplayName(util.setColor("    &3&lMytrix &r&lPrison    "));
+		Score player = obj.getScore(util.setColor("  &7Name: &r" + p.getName()));
+		Score rank = obj.getScore(util.setColor("  &7Rank: " + "[A]"));
+		Score multi = obj.getScore(util.setColor("  &7Multi: &r" + "1.5x"));
+		Score bal = obj.getScore(util.setColor("  &7Balance: &2$" + "200"));
+		Score token = obj.getScore(util.setColor("  &7Tokens: &c✪" + "1050"));
+		Score vp = obj.getScore(util.setColor("  &7Vote Party: &r" + "19/20"));
+		Score count = obj.getScore(util.setColor("  &7Online: &r" + "20/100"));
+		Score head1 = obj.getScore(util.setColor("&3&lPLAYER"));
+		Score head2 = obj.getScore(util.setColor("&3&lBALANCE"));
+		Score head3 = obj.getScore(util.setColor("&3&lSERVER"));
+
+		Score spacer1 = obj.getScore("");
+		Score spacer2 = obj.getScore(" ");
+		Score spacer3 = obj.getScore("  ");
+		
+		spacer1.setScore(15);
+		head1.setScore(14);
+		player.setScore(13);
+		rank.setScore(12);
+		multi.setScore(11);
+		spacer2.setScore(10);
+		head2.setScore(9);
+		bal.setScore(8);
+		token.setScore(7);
+		spacer3.setScore(6);
+		head3.setScore(5);
+		vp.setScore(4);
+		count.setScore(3);
+		p.setScoreboard(board);
+	}
+	
+	
 }
