@@ -18,26 +18,9 @@ public class CmdClearChat implements CommandExecutor {
 				Player p = (Player) sender;
 				name = p.getName();
 			}
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
-			Bukkit.broadcastMessage("");
+			for(int i=0; i<100; i++) {
+				Bukkit.broadcastMessage("");	
+			}
 			Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&7&lChat cleared by " + name));
 			return true;
 		}
