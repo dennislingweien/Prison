@@ -25,3 +25,7 @@ commands:
     description:
     usage: /filetest
     aliases: [ft]
+  customenchant:
+    description:
+    usage: /customenchant
+    aliases: [ce]
