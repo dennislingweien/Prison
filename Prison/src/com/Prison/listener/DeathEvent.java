@@ -25,6 +25,8 @@ public class DeathEvent implements Listener {
 
 	}
 	
+	@EventHandler
+	
 	public ItemStack dropHead(String uuid) {
 		ItemStack item = new ItemStack(Material.PLAYER_HEAD, 1);
 		SkullMeta meta = (SkullMeta) item.getItemMeta();
