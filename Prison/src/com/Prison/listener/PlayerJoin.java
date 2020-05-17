@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,19 +26,17 @@ public class PlayerJoin implements Listener {
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
-		
+
 		Player p = e.getPlayer();
-		if(!p.hasPlayedBefore()) {
-			Bukkit.broadcastMessage(ChatColor.DARK_GREEN + " + " + ChatColor.GRAY + p.getName());	
-		}
-		else
-		{
-			PlayerData pd = new PlayerData(p);
-			setup(pd);
-		}
+
+		//Bukkit.broadcastMessage(ChatColor.DARK_GREEN + " + " + ChatColor.GRAY + p.getName());	
+
+		PlayerData pd = new PlayerData(p);
+		setup(pd);
 		setupScoreboard(p);
-		
 	}
+
+
 
 	public void setup(PlayerData pd) {
 		String uuid = pd.getPlayer().getUniqueId().toString();
@@ -57,7 +54,7 @@ public class PlayerJoin implements Listener {
 		else {
 			pd.getPlayer().sendMessage("file already created!");
 		}
-		
+
 	}
 
 
@@ -66,7 +63,7 @@ public class PlayerJoin implements Listener {
 		Scoreboard board = Bukkit.getServer().getScoreboardManager().getNewScoreboard();
 		int online = Bukkit.getOnlinePlayers().size();
 		int max = Bukkit.getMaxPlayers();
-		
+
 		Objective obj = board.registerNewObjective("Test1", "test2", "test3");
 		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 
@@ -88,7 +85,7 @@ public class PlayerJoin implements Listener {
 		Score spacer2 = obj.getScore(" ");
 		Score spacer3 = obj.getScore("  ");
 		Score spacer4 = obj.getScore("   ");
-		
+
 		spacer1.setScore(15);
 		head1.setScore(14);
 		player.setScore(13);
@@ -104,9 +101,9 @@ public class PlayerJoin implements Listener {
 		count.setScore(3);
 		spacer4.setScore(2);
 		site.setScore(1);
-		
+
 		p.setScoreboard(board);
 	}
-	
-	
+
+
 }

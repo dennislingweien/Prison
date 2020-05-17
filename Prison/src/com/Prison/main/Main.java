@@ -26,8 +26,8 @@ public class Main extends JavaPlugin{
 	    getLogger().info("Prison is loaded.");
 		registerCommands();
 		registerListeners();
-		registerEnchantments();
 		setupFiles();
+		//registerEnchantments();
 		//instance = this;
 	}
 	
