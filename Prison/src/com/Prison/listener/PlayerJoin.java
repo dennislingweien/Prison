@@ -80,7 +80,7 @@ public class PlayerJoin implements Listener {
 		Score head1 = obj.getScore(util.setColor("&3&lPLAYER"));
 		Score head2 = obj.getScore(util.setColor("&3&lBALANCE"));
 		Score head3 = obj.getScore(util.setColor("&3&lSERVER"));
-
+		
 		Score spacer1 = obj.getScore("");
 		Score spacer2 = obj.getScore(" ");
 		Score spacer3 = obj.getScore("  ");
