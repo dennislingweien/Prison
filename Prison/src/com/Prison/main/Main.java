@@ -20,7 +20,7 @@ import com.Prison.listener.ServerMOTD;
 
 public class Main extends JavaPlugin{
 	
-	private static Main instance;
+	//private static Main instance = new Main();
 	
 	public void onEnable() {
 	    getLogger().info("Prison is loaded.");
@@ -28,7 +28,7 @@ public class Main extends JavaPlugin{
 		registerListeners();
 		registerEnchantments();
 		setupFiles();
-		instance = this;
+		//instance = this;
 	}
 	
 	public void onDisable() {
@@ -86,8 +86,8 @@ public class Main extends JavaPlugin{
 		
 	}
 	
-	public static Main getInstance() {
-		return instance;
-	}
+//	public static Main getInstance() {
+//		return instance;
+//	}
 
 }

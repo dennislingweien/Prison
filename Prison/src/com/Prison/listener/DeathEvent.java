@@ -16,7 +16,8 @@ public class DeathEvent implements Listener {
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		String uuid = e.getEntity().getUniqueId().toString();
-
+//		e.getDrops().add(dropHead(uuid));
+		
 		//RNG shiet for head
 		int randomnum = ThreadLocalRandom.current().nextInt(1, 5);
 		if(randomnum == 3) {
@@ -24,8 +25,6 @@ public class DeathEvent implements Listener {
 		}
 
 	}
-	
-	@EventHandler
 	
 	public ItemStack dropHead(String uuid) {
 		ItemStack item = new ItemStack(Material.PLAYER_HEAD, 1);

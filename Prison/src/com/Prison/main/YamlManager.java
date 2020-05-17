@@ -13,8 +13,9 @@ import org.bukkit.entity.Player;
  *
  */
 public class YamlManager {
-	private Main main = Main.getInstance();
+//	private static Main main = Main.getInstance();
 	
+	private Main main = new Main();
 
 	
 	//==================================//
