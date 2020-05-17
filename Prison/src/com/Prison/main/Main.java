@@ -70,7 +70,7 @@ public class Main extends JavaPlugin{
 			e.printStackTrace();
 		}
 		if (registered) {
-			getLogger().info("REGISTERED" + enchantment.getName());
+			getLogger().info("REGISTERED" + enchantment.getKey());
 		}
 	}
 	public void setupFiles() {

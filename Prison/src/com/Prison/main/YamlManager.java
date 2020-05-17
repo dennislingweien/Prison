@@ -13,12 +13,9 @@ import org.bukkit.entity.Player;
  *
  */
 public class YamlManager {
-	private Main main;
+	private Main main = Main.getInstance();
 	
-	//some dumb ass main shit
-	public YamlManager(Main _main) {
-		this.main = _main;
-	}
+
 	
 	//==================================//
 	//============READ YAML=============//
@@ -52,7 +49,7 @@ public class YamlManager {
 	//==================================//
 	//===========CREATE YAML============//
 	//==================================//
-	/*
+	
 	public void createYAML(String name) {
 		File file = new File(main.getDataFolder() + "/" + name + ".yml");
 		FileConfiguration config = YamlConfiguration.loadConfiguration(file);
@@ -62,5 +59,5 @@ public class YamlManager {
 			e.printStackTrace();
 		}
 	}
-	*/
+	
 }
