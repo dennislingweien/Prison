@@ -2,6 +2,7 @@ package com.Prison.listener;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -30,9 +31,22 @@ public class MineEvent implements Listener{
 		Player p = (Player) e.getPlayer();
 		ItemStack item = p.getInventory().getItemInMainHand();
 		if(item.getType() == Material.DIAMOND_PICKAXE) {
-			//ItemMeta meta = item.getItemMeta();
-			//meta.setDisplayName(meta.getDisplayName() + "1");
-			//item.setItemMeta(meta);
+			Block block = e.getBlock();
+			//Get level for Tremor Enchant/Buff
+			//apply level and multiplier x, y, z
+			//for now i put default 3, 3, 3
+			BreakRadius(3, 3, 3, block);
 		}
+	}
+	
+	private void BreakRadius(int x, int y, int z, Block _b) {
+		int defOffset = -1;
+        for(int xOff = defOffset; xOff < defOffset + x; ++xOff){
+            for(int yOff = defOffset; yOff < defOffset + y; ++yOff){
+                for(int zOff = defOffset; zOff < defOffset + z; ++zOff){
+                    _b.getRelative(xOff, yOff, zOff).breakNaturally();
+                }
+            }
+        }
 	}
 }
